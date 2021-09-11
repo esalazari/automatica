@@ -40,22 +40,3 @@ class User(AbstractUser):
         "Is the user a member of staff?"
         # Simplest possible answer: All admins are staff
         return self.is_superuser
-
-
-class Direction(models.Model):
-    country = models.CharField(
-        max_length=30, null=False, blank=False, help_text="Obligatorio"
-    )
-    city = models.CharField(
-        max_length=30, null=False, blank=False, help_text="Obligatorio"
-    )
-    region = models.CharField(
-        max_length=30, null=False, blank=False, help_text="Obligatorio"
-    )
-    postalcode = models.CharField(
-        max_length=30, null=False, blank=False, help_text="Obligatorio"
-    )
-    commune = models.CharField(
-        max_length=30, null=False, blank=False, help_text="Obligatorio"
-    )
-    user = models.ForeignKey(User, verbose_name=("Usuario"), on_delete=models.CASCADE)
