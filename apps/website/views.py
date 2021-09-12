@@ -1,7 +1,10 @@
 from django.shortcuts import render
+from apps.machine.models import Machine, ImageMachine
 
 # Create your views here.
 
 
 def home(request):
-    return render(request, "index.html")
+    machines = Machine.objects.all()
+    context = {"machines": machines}
+    return render(request, "body.html", context=context)
