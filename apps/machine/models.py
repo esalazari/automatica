@@ -24,6 +24,18 @@ class Machine(models.Model):
         verbose_name="Marca del producto",
     )
     price = models.IntegerField(help_text="Precio del producto", verbose_name="Precio")
+    discount_price = models.IntegerField(
+        help_text="Precio con descuento (No es obligatorio)",
+        verbose_name="Precio descuento",
+        null=True,
+        blank=True,
+    )
+    discount_rate = models.IntegerField(
+        help_text="Porcentaje del descuento (No es obligatorio)",
+        verbose_name="Descuento en %",
+        null=True,
+        blank=True,
+    )
     stock = models.IntegerField(help_text="Cantidad de producto")
     description = models.TextField(
         max_length=1000,
@@ -37,7 +49,9 @@ class Machine(models.Model):
         verbose_name="Categoria",
     )
     cover_image = models.ImageField(
-        upload_to="Portadas/", verbose_name="Imagen de portada"
+        upload_to="Portadas/",
+        verbose_name="Imagen de portada",
+        help_text="Seleccione una imagen",
     )
 
     class Meta:
