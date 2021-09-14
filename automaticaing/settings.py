@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "apps.machine",
     "apps.user",
     "apps.website",
+    "apps.cold_chambers",
 ]
 
 MIDDLEWARE = [
