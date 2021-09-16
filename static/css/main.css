@@ -1270,7 +1270,7 @@ top: -1px;
   font-size: 14px;
   font-weight: 600;
   padding: 13px 30px;
-  background-color: #081828;
+  background-color: #FF7B00;
   color: #fff;
   border: none;
   -webkit-transition: 0.2s;
@@ -1309,7 +1309,7 @@ top: -1px;
 
 .button .btn:hover {
   color: #fff;
-  background-color: #081828;
+  background-color: #FF9737;
   -webkit-box-shadow: 0px 4px 4px #0000000f;
   box-shadow: 0px 4px 4px #0000000f;
 }
@@ -1440,9 +1440,9 @@ top: -1px;
    padding: 9px 0;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 780px) {
   .header .topbar .top-left {
-    text-align: center;
+    display: none;
   }
 }
 
@@ -1528,20 +1528,12 @@ top: -1px;
 }
 
 .header .topbar .top-middle .useful-links li a:hover {
-  color: #081828;
+  color: #ff7b00;
 }
 
 .header .topbar .top-end {
   float: right;
   display: inline-block;
-}
-
-@media (max-width: 767px) {
-  .header .topbar .top-end {
-    float: none;
-    text-align: center;
-    display: block;
-  }
 }
 
 .header .topbar .top-end .user {
@@ -1550,6 +1542,7 @@ top: -1px;
   margin-right: 5px;
   font-weight: 500;
   font-size: 14px;
+  text-transform: uppercase;
 }
 
 .header .topbar .top-end .user i {
@@ -1583,12 +1576,22 @@ top: -1px;
 .header .topbar .top-end .user-login li a {
   color: #fff;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 12px;
   white-space: nowrap;
 }
 
 .header .topbar .top-end .user-login li a:hover {
-  color: #081828;
+  color: #ff7b00;
+}
+
+@media (max-width: 780px) {
+  .header .topbar .top-end .user-login li a {
+    font-size: 10px;
+  }
+
+  .header .topbar .top-end .user-login .useful-links li .home-menu{
+    display: none;
+  }
 }
 
 .header .header-middle {
@@ -1625,6 +1628,7 @@ top: -1px;
 
 @media (max-width: 767px) {
   .header .middle-right-area {
+    width: 200px;
     -webkit-box-pack: right;
     -ms-flex-pack: right;
     justify-content: right;
@@ -1639,8 +1643,9 @@ top: -1px;
 }
 
 @media (max-width: 767px) {
-  .header .nav-hotline {
-    display: none;
+  .header .nav-hotline a h3 span{
+    width: 100%;
+    font-size: 10px;
   }
 }
 
@@ -2506,7 +2511,7 @@ top: 2px;
 
 .header .nav-social ul li a:hover {
   color: #fff;
-  background-color: #081828;
+  background-color: #ff7b00;
   border-color: transparent;
 }
 
@@ -2692,7 +2697,7 @@ top: 2px;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  font-weight: 600;
+  font-weight: 800;
   transition: all 0.3s ease-out 0s;
   position: relative;
   text-transform: capitalize;
@@ -2915,7 +2920,7 @@ top: 2px;
   z-index: 2;
   color: #fff;
   font-size: 17px;
-  background: #081828;
+  background: #FF7B00;
   border: none;
   padding: 2px 5px;
   border-radius: 4px;
@@ -2929,7 +2934,7 @@ top: 2px;
 }
 
 .hero-area .tns-controls button:hover {
-  background-color: #081828;
+  background-color: #FF9737;
   color: #fff;
 }
 
@@ -3283,7 +3288,7 @@ top: 2px;
 }
 
 .single-product .product-image .sale-tag {
-  background: #f73232;
+  background: #FF7B00;
   border-radius: 2px;
   font-size: 12px;
   color: #fff;

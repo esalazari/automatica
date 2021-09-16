@@ -91,7 +91,7 @@
 <!-- End Hero Area -->
 
 <!-- Start Trending Product Area -->
-<section class="trending-product section" style="margin-top: 12px;">
+{% comment %} <section class="trending-product section" style="margin-top: 12px;">
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -109,7 +109,9 @@
         <div class="single-product">
           <div class="product-image">
             <img src="{{machine.cover_image.url}}" alt="#">
-            <span class="sale-tag">-25%</span>
+            {% if machine.discount_price %}
+              <span class="sale-tag">-{{machine.discount_rate}}%</span>
+            {% endif %}
             <div class="button">
               <a href="product-details.html" class="btn"><i class="lni lni-cart"></i> Agregar al carro</a>
               <a href="product-details.html" class="btn"><i class="lni"></i> Ver detalles</a>
@@ -129,16 +131,21 @@
               <li><span>4.0 Review(s)</span></li>
             </ul>
             <div class="price">
-              <span>${{ machine.price }}</span>
+              {% if machine.discount_price %}
+                <span>${{ machine.discount_price }}</span>
+                <span class="discount-price">${{ machine.price }}</span> 
+              {% else %}
+                <span>${{ machine.price }}</span>
+              {% endif %}
             </div>
           </div>
         </div>
         <!-- End Single Product -->
       </div>
       {% endfor %}
-    </div>
+    </div> 
   </div>
-</section>
+</section>{% endcomment %}
 <!-- End Trending Product Area -->
 
 <div class="brands">
