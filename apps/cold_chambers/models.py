@@ -1,16 +1,15 @@
 from django.db import models
-from django.utils.translation import gettext_lazy as _
 from ckeditor.fields import RichTextField
 
 # Create your models here.
 
 
 class ColdChambers(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, verbose_name="Nombre de Camara")
 
     class CategoriesColdChambers(models.TextChoices):
-        Refrigeracion = "RF", _("Refrigeración")
-        Congelado = "CG", _("Congelado")
+        Refrigeracion = "Refrigeración"
+        Congelado = "Congelador"
 
     categories = models.CharField(
         max_length=20,
@@ -23,6 +22,11 @@ class ColdChambers(models.Model):
         help_text="Ingrese la longitudes de la camara",
         verbose_name="Dimensiones",
     )
+    photo = models.ImageField(
+        upload_to="camaras/",
+        verbose_name="Imagen de camara de frio",
+        help_text="Imagen que se mostrará en la pagina web",
+    )
     camera_price = models.IntegerField(
         help_text="Precio de camara", verbose_name="Precio de camara"
     )
@@ -34,6 +38,9 @@ class ColdChambers(models.Model):
         help_text="Ingrese la descripción de la camara de frío",
         verbose_name="Descripción",
     )
+
+    def __str__(self):
+        return self.name
 
     class Meta:
         verbose_name = "Camara de frío"

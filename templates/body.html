@@ -1,6 +1,7 @@
 {% extends 'index.html' %}
 {% load static %}
 {% block body %}
+{% load humanize %}
 
 <!-- Preloader -->
 <div class="preloader">
@@ -91,14 +92,67 @@
 <!-- End Hero Area -->
 
 <!-- Start Trending Product Area -->
-{% comment %} <section class="trending-product section" style="margin-top: 12px;">
+<section class="trending-product section" style="margin-top: 12px;">
   <div class="container">
     <div class="row">
       <div class="col-12">
         <div class="section-title">
-          <h2>Trending Product</h2>
-          <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-            suffered alteration in some form.</p>
+          <h2>caramas de frio disponibles</h2>
+          <p>Realizamos instalaciones por todo chile, contactarnos para pedir una visita a terreno, donde nuestro personal se dirige a la ubicacion que se instalará la camara de frio</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      {% for cold in coldchambers %}
+      <div class="col-lg-3 col-md-6 col-12">
+        <!-- Start Single Product -->
+        <div class="single-product">
+          <div class="product-image">
+            <img src="{{cold.photo.url}}" alt="#">
+            {% if machine.discount_price %}
+              <span class="sale-tag">-{{cold.discount_rate}}%</span>
+            {% endif %}
+            <div class="button">
+              <a href="product-details.html" class="btn"><i class="lni"></i> Ver detalles</a>
+            </div>
+          </div>
+          <div class="product-info">
+            <h4 class="title">
+              <a href="product-grids.html">{{ cold.name }}</a>
+            </h4>
+            <span class="category">{{ cold.categories }}</span>
+            <span class="category">Dimensiones {{ cold.dimensions }}</span>
+            <ul class="review">
+              <li><i class="lni lni-star-filled"></i></li>
+              <li><i class="lni lni-star-filled"></i></li>
+              <li><i class="lni lni-star-filled"></i></li>
+              <li><i class="lni lni-star-filled"></i></li>
+              <li><i class="lni lni-star"></i></li>
+              <li><span>4.0 Review(s)</span></li>
+            </ul>
+            <div class="price">
+                <span>${{ cold.camera_price | intcomma }} <span class="iva"> + IVA</span></span>
+                <br>
+                <span class="price-install">instalación: ${{ cold.installation_price | intcomma }}</span> 
+            </div>
+          </div>
+        </div>
+        <!-- End Single Product -->
+      </div>
+      {% endfor %}
+    </div> 
+  </div>
+</section>
+<!-- End Trending Product Area -->
+
+<!-- Start Trending Product Area -->
+<section class="trending-product section" style="margin-top: 12px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="section-title">
+          <h2>Productos Recientes</h2>
+          <p>Constantemente estamos subiendo productos para su local o cocina, donde podrá ver las caracteristicas y precios, para completar la necesidad del cliente </p>
         </div>
       </div>
     </div>
@@ -113,7 +167,6 @@
               <span class="sale-tag">-{{machine.discount_rate}}%</span>
             {% endif %}
             <div class="button">
-              <a href="product-details.html" class="btn"><i class="lni lni-cart"></i> Agregar al carro</a>
               <a href="product-details.html" class="btn"><i class="lni"></i> Ver detalles</a>
             </div>
           </div>
@@ -132,10 +185,10 @@
             </ul>
             <div class="price">
               {% if machine.discount_price %}
-                <span>${{ machine.discount_price }}</span>
-                <span class="discount-price">${{ machine.price }}</span> 
+                <span>${{ machine.discount_price | intcomma }} <span class="iva"> + IVA</span></span>
+                <span class="discount-price">${{ machine.price | intcomma }}</span> 
               {% else %}
-                <span>${{ machine.price }}</span>
+                <span>${{ machine.price | intcomma }} <span class="iva"> + IVA</span></span>
               {% endif %}
             </div>
           </div>
@@ -145,7 +198,7 @@
       {% endfor %}
     </div> 
   </div>
-</section>{% endcomment %}
+</section>
 <!-- End Trending Product Area -->
 
 <div class="brands">

@@ -6,7 +6,7 @@ from apps.cold_chambers.models import ColdChambers
 
 
 def home(request):
-    machines = Machine.objects.all()
-    coldchambers = ColdChambers.objects.all()
+    machines = Machine.objects.all()[:4]
+    coldchambers = ColdChambers.objects.all()[:4]
     context = {"machines": machines, "coldchambers": coldchambers}
     return render(request, "body.html", context=context)

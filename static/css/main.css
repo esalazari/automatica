@@ -31,6 +31,11 @@ p {
   padding: 0;
 }
 
+/* header .container-nav-cam{
+  width: 100%;
+  background-color: #FF7B00;
+} */
+
 .navbar-toggler:focus,
 a:focus,
 input:focus,
@@ -3415,12 +3420,28 @@ top: 2px;
   display: inline-block;
 }
 
+.single-product .product-info .price .iva {
+  font-size: 12px;
+  font-weight: 700;
+  color: #000000;
+  display: inline-block;
+}
+
 .single-product .product-info .price .discount-price {
   margin: 0;
   color: #aaaaaa;
   text-decoration: line-through;
   font-weight: normal;
   margin-left: 10px;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.single-product .product-info .price .price-install {
+  margin: 0;
+  color: #aaaaaa;
+  text-decoration: none;
+  font-weight: normal;
   font-size: 14px;
   display: inline-block;
 }
@@ -4699,7 +4720,7 @@ top: 2px;
 
 .footer .single-footer.f-link ul li a:hover {
   padding-left: 5px;
-  color: #081828;
+  color: #FF7B00;
 }
 
 .footer .single-footer.f-contact .phone {
@@ -4733,7 +4754,7 @@ top: 2px;
 }
 
 .footer .single-footer.f-contact .mail a:hover {
-  color: #081828;
+  color: #FF7B00;
 }
 
 .footer .single-footer.our-app .app-btn li {
@@ -4790,7 +4811,7 @@ top: 2px;
 }
 
 .footer .single-footer.our-app .app-btn li a:hover {
-  background-color: #081828;
+  background-color: #FF7B00;
   color: #fff;
   border-color: transparent;
 }
