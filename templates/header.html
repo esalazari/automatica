@@ -25,7 +25,7 @@
           <div class="top-end">
             <ul class="user-login">
               <ul class="useful-links">
-                <li><a class="home-menu" href="#">HOME</a></li>
+                <li><a class="home-menu" href="{% url 'website:home'%}">HOME</a></li>
                 <li><a href="#">CARAMAS DE FRIO REALIZADAS</a></li>
                 <li><a href="#">CONTACTANOS</a></li>
                 <li><a href="#">FORMAS DE PAGO</a></li>
@@ -43,7 +43,7 @@
       <div class="row align-items-center">
         <div class="col-lg-3 col-md-3 col-7">
           <!-- Start Header Logo -->
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="{% url 'website:home'%}">
             <img src="{% static 'images/automatica2.png' %}" alt="Logo">
           </a>
           <!-- End Header Logo -->
@@ -98,14 +98,17 @@
               <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                 <ul id="nav" class="navbar-nav ms-auto">
                   <li class="nav-item">
-                    <a class="dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse"
+                    <a class="dd-menu collapsed" href="{% url 'coldchamber:coldchambers' %}" data-bs-toggle="collapse"
                       data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent" aria-expanded="false"
                       aria-label="Toggle navigation">CAMARAS DE FRIO</a>
                     <ul class="sub-menu collapse" id="submenu-1-2">
                       {% for coldchamber in coldchambers %}
-                      <li class="nav-item nav-items-coldchamber"><a href="#">{{coldchamber.name}}
+                      <li class="nav-item nav-items-coldchamber"><a
+                          href="{% url 'coldchamber:detail_coldchamber' coldchamber.id %}">{{coldchamber.name}}
                           {{coldchamber.dimensions}} Mt. </a></li>
                       {% endfor %}
+                      <li class="nav-item nav-items-coldchamber"><a href="{% url 'coldchamber:coldchambers' %}">Ver
+                          todas las camaras de frio...</a></li>
                     </ul>
                   </li>
                 </ul>
