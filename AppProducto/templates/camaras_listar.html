@@ -1,0 +1,32 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block container %} 
+<section class="padding-top">
+  <div class="container">
+    <div class="row">
+      {% for camara in productos %}
+      <div class="col-lg-3 col-md-6 col-sm-6">
+        <figure class="card card-product-grid">
+          <a href="#" class="img-wrap">
+            <span class="topbar"> <b class="badge bg-success"> {{ camara.tipo.descripcion }} </b> </span>
+            <img src="{% static 'imagenes/camara.png' %}">
+          </a>
+          <figcaption class="info-wrap border-top">
+            <a href="#" class="title text-truncate">{{camara.nombre}}</a>
+            <small class="text-muted">Dimensión: {{camara.dimension}}</small>
+            <br>
+            <del class="price-old">$ {{camara.precioAntes|floatformat:0}}</del>
+            <div class="price-wrap">
+              <span class="price">Precio: $ {{camara.valorUF}} + IVA</span>
+            </div> <!-- price-wrap.// -->
+            <div class="price-wrap">
+              <span class="price">Con Intalación: $ {{camara.precioIntalacion|floatformat:0}} + IVA</span>
+            </div> <!-- price-wrap.// -->
+          </figcaption>
+        </figure>
+      </div> <!-- col end.// -->
+      {% endfor %}
+    </div>
+</section>
+{% endblock %}

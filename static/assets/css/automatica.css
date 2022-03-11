@@ -1,0 +1,15 @@
+.dx-datagrid-action.dx-cell-focus-disabled {
+    background-color: rgb(131, 131, 131);
+    color: black;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.dx-command-edit.dx-cell-focus-disabled{
+    background-color: rgb(131, 131, 131);
+    color: black;
+}
+
+.dx-link.dx-icon-folder.dx-link-icon{
+    color: orangered;
+}

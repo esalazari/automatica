@@ -19,7 +19,11 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+app_name = "config"
+
 urlpatterns = [
     path("", include("AppInicio.urls", namespace="inicio")),
+    path("", include("AppProducto.urls", namespace="producto")),
+    path("producto/", include("AppProducto.urls")),
     path("admin/", admin.site.urls),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

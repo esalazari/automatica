@@ -3,7 +3,7 @@ from AppInicio.views import home
 from django.conf import settings
 from django.conf.urls.static import static
 
-app_name = "website"
+app_name = "inicio"
 
 urlpatterns = [
     path("", home, name="home"),

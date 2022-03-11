@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Type some info">
+	<meta name="author" content="Type name">
+
+	<title>{% block titulo %} {% endblock %}</title>
+
+	<!-- Bootstrap css -->
+	<link href="{% static 'lib/modelo/css/bootstrap.css' %}" rel="stylesheet" type="text/css" />
+
+	<!-- Custom css -->
+	<link href="{% static 'lib/modelo/css/ui.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static 'lib/modelo/css/responsive.css' %}" rel="stylesheet" type="text/css" />
+
+	<!-- Font awesome 5 -->
+	<link href="{% static 'lib/modelo/fonts/fontawesome/css/all.min.css' %}" type="text/css" rel="stylesheet">
+
+</head>
+
+<body class="bg-light">
+
+	{% include 'base/header.html' %}
+
+	{% include 'base/menu.html' %}
+	<br>
+	<div class="container">
+		<header class="section-heading">
+      <h3 class="section-title">{% block subtitulo %} {% endblock %}</h3>
+    </header>
+	</div>
+	<div class="container">
+	{% block container %} {% endblock %}
+	</div>
+
+	{% include 'base/producto_destacados.html' %}
+
+	{% include 'base/marcas.html' %}
+
+	{% include 'base/footer.html' %}
+
+	<!-- Bootstrap js -->
+	<script src="{% static 'lib/modelo/js/bootstrap.bundle.min.js' %}"></script>
+
+	<!-- Custom js -->
+	<script src="{% static 'lib/modelo/js/script.js' %}"></script>
+
+</body>
+
+</html>
