@@ -23,7 +23,7 @@ app_name = "config"
 
 urlpatterns = [
     path("", include("AppInicio.urls", namespace="inicio")),
-    path("", include("AppProducto.urls", namespace="producto")),
-    path("producto/", include("AppProducto.urls")),
+    path("", include("AppCamara.urls", namespace="camara")),
+    path("camara/", include("AppCamara.urls")),
     path("admin/", admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

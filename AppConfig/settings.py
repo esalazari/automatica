@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     "django.contrib.humanize",
     "ckeditor",
     "AppInicio",
-    "AppProducto",
+    "AppCamara",
 ]
 
 MIDDLEWARE = [

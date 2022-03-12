@@ -1,14 +1,13 @@
 from email.policy import default
-from tkinter import CASCADE
 from django.db import models
 
 # Create your models here.
-class TipoProducto(models.Model):
+class TipoCamara(models.Model):
     codigo = models.CharField(
         max_length=150, null=True, blank=True, verbose_name="Código"
     )
     descripcion = models.CharField(
-        max_length=150, null=True, blank=True, verbose_name="Tipo"
+        max_length=150, null=True, blank=True, verbose_name="Descripción"
     )
     # Datos de Creación
     registroActivo = models.BooleanField(default=True, verbose_name="Registro Activo")
@@ -22,34 +21,51 @@ class TipoProducto(models.Model):
     class Meta:
         verbose_name = "Tipo de Camara"
         verbose_name_plural = "Tipo de Camara"
-        db_table = "tipoCamara"
 
 
-class Producto(models.Model):
+class ImagenCamara(models.Model):
+    imagen = models.ImageField(
+        default="images/default.jpg",
+        upload_to="images/camaras/%Y/%m/",
+        verbose_name="imagen de Camara",
+    )
+    # Datos de Creación
+    registroActivo = models.BooleanField(default=True, verbose_name="Registro Activo")
+    registroFechaCreacion = models.DateTimeField(
+        auto_now=True, verbose_name="Fecha de Creación"
+    )
+
+    class Meta:
+        verbose_name = "imagen Camara"
+        verbose_name_plural = "Imagen Camara"
+
+
+class Camara(models.Model):
     codigo = models.CharField(
-        max_length=150, null=True, blank=True, verbose_name="Código de producto"
+        max_length=150, null=True, blank=True, verbose_name="Código de camara"
     )
     nombre = models.CharField(
-        max_length=150, null=True, blank=True, verbose_name="Nombre de producto"
+        max_length=150, null=True, blank=True, verbose_name="Nombre de camara"
     )
-    dimension = models.CharField(max_length=150, verbose_name="Dimensión del producto")
+    dimension = models.CharField(max_length=150, verbose_name="Dimensión del camara")
     descripcion = models.CharField(
-        max_length=150, null=True, blank=True, verbose_name="Descripción de producto"
+        max_length=150, null=True, blank=True, verbose_name="Descripción de camara"
     )
-    peso = models.IntegerField(null=True, blank=True, verbose_name="Peso de producto")
+    peso = models.IntegerField(null=True, blank=True, verbose_name="Peso de camara")
     voltaje = models.IntegerField(
-        null=True, blank=True, verbose_name="Voltaje de producto"
+        null=True, blank=True, verbose_name="Voltaje de camara"
     )
-    valorUF = models.IntegerField(
-        null=True, blank=True, verbose_name="Valor uf de producto"
-    )
+    valorUF = models.IntegerField(verbose_name="Valor uf de camara")
     tipo = models.ForeignKey(
-        TipoProducto,
+        TipoCamara,
         max_length=150,
         null=True,
         on_delete=models.CASCADE,
         blank=True,
         verbose_name="Tipo de Camara",
+    )
+    imagen = models.ManyToManyField(
+        ImagenCamara, blank=True, default=None, verbose_name="Imagen de Camara"
     )
     # Datos de Creación
     registroActivo = models.BooleanField(default=True, verbose_name="Registro Activo")
@@ -61,9 +77,8 @@ class Producto(models.Model):
         return str(self.nombre)
 
     class Meta:
-        verbose_name = "Producto"
-        verbose_name_plural = "Producto"
-        db_table = "producto"
+        verbose_name = "Camara"
+        verbose_name_plural = "Camara"
 
     def precioAntes(self):
         _precioAnterio = self.valorUF + self.valorUF * 0.2

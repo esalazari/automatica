@@ -6,14 +6,16 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('AppProducto', '0001_initial'),
+        ("AppCamara", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='producto',
-            name='dimension',
-            field=models.CharField(default=0, max_length=150, verbose_name='Dimensión del producto'),
+            model_name="camara",
+            name="dimension",
+            field=models.CharField(
+                default=0, max_length=150, verbose_name="Dimensión del camara"
+            ),
             preserve_default=False,
         ),
     ]

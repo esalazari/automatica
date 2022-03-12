@@ -1,23 +1,23 @@
 from django.http import JsonResponse
-from AppProducto.models import *
+from AppCamara.models import *
 
 
-def jsonListarProductos(request):
+def jsonListarCamaras(request):
     _json = []
     _contador = 0
-    _productos = Producto.objects.filter(registroActivo=True)
+    _camaras = Camara.objects.filter(registroActivo=True)
 
-    for _producto in _productos:
+    for _camara in _camaras:
         _contador += 1
         _item = {
             "numero": _contador,
-            "id": _producto.id,
-            "nombre": _producto.nombre,
-            "codigo": _producto.codigo,
+            "id": _camara.id,
+            "nombre": _camara.nombre,
+            "codigo": _camara.codigo,
             "pdf": "",
             "valor_neto": "",
             "iva_incluido": "",
-            "oferta_neto": _producto.id,
+            "oferta_neto": _camara.id,
             "oferta_con_iva": "",
         }
         _json.append(_item)

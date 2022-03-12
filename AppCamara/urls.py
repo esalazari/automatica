@@ -1,13 +1,13 @@
 from argparse import Namespace
 from django.urls import path
-from AppProducto import views, dx
+from AppCamara import views, dx
 from django.conf import settings
 from django.conf.urls.static import static
 
-app_name = "productos"
+app_name = "camaras"
 
 urlpatterns = [
-    path("json-lista-producto/", dx.jsonListarProductos, name="json-lista-producto"),
+    path("json-listar-camaras/", dx.jsonListarCamaras, name="json-lista-camaras"),
     path(
         "camaras-de-frio/",
         views.camarasfrio,
@@ -22,5 +22,10 @@ urlpatterns = [
         "camaras-congelado/",
         views.camarasCongelado,
         name="camaras-congelado",
+    ),
+    path(
+        "camara-detalle/<int:id>/",
+        views.camaraDetalle,
+        name="camara-detalle",
     ),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

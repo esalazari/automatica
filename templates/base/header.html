@@ -54,9 +54,16 @@
           <li class="nav-item">
             <a class="nav-link ps-0" href="{% url 'inicio:home' %}"> Inicio </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'producto:camaras-de-frio' %}">Camaras de Frío</a>
-          </li>
+          <li class="nav-item dropdown">
+						<a class="dropdown-toggle nav-link" href="" data-bs-toggle="dropdown">
+							Camaras de Frío
+						</a>
+						<ul class="dropdown-menu">
+							<li> <a class="dropdown-item" href="{% url 'camara:camaras-refrigeracion' %}">Camaras de Refrigeración </a> </li>
+							<li> <a class="dropdown-item" href="{% url 'camara:camaras-congelado' %}">Camaras de Congelado</a> </li>
+							<li> <a class="dropdown-item" href="{% url 'camara:camaras-de-frio' %}">Todas...</a> </li>
+						</ul>
+					</li>
           <li class="nav-item">
             <a class="nav-link" href="#">Nuestros Trabajos</a>
           </li>
