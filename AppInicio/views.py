@@ -10,3 +10,7 @@ def home(request):
     )[:4]
     context = {"camaras": _camaras}
     return render(request, "base/inicio.html", context=context)
+
+def cargarDatosIniciales(request):
+    TipoCamara.objects.create( codigo = 'TC-001', descripcion = 'Congelado')
+    TipoCamara.objects.create( codigo = 'TC-002', descripcion = 'Refrigeración')

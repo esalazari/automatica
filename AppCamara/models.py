@@ -1,7 +1,21 @@
 from email.policy import default
 from django.db import models
+import requests
+import json
+from datetime import datetime
+import pandas as pd
 
 # Create your models here.
+
+def valorUf():
+    _dia = datetime.today().date().strftime('%d-%m-%Y')
+    url = f'https://mindicador.cl/api/uf/{_dia}'
+    response = requests.get(url)
+    data = json.loads(response.text.encode("utf-8"))
+    for e in data["serie"]:
+        _valor_uf = e["valor"]
+    return _valor_uf
+
 class TipoCamara(models.Model):
     codigo = models.CharField(
         max_length=150, null=True, blank=True, verbose_name="Código"
@@ -51,10 +65,6 @@ class Camara(models.Model):
     descripcion = models.CharField(
         max_length=150, null=True, blank=True, verbose_name="Descripción de camara"
     )
-    peso = models.IntegerField(null=True, blank=True, verbose_name="Peso de camara")
-    voltaje = models.IntegerField(
-        null=True, blank=True, verbose_name="Voltaje de camara"
-    )
     valorUF = models.IntegerField(verbose_name="Valor uf de camara")
     tipo = models.ForeignKey(
         TipoCamara,
@@ -80,10 +90,18 @@ class Camara(models.Model):
         verbose_name = "Camara"
         verbose_name_plural = "Camara"
 
+    def precioCamara(self):
+        _total = self.valorUF * valorUf()
+        return _total
+
     def precioAntes(self):
-        _precioAnterio = self.valorUF + self.valorUF * 0.2
+        _total = self.valorUF * valorUf()
+        _precioAnterio = _total + _total * 0.1
         return _precioAnterio
 
     def precioIntalacion(self):
-        _precioIntalacion = self.valorUF + self.valorUF * 0.07
+        _total = self.valorUF * valorUf()
+        _precioIntalacion = _total + _total * 0.07
         return _precioIntalacion
+
+

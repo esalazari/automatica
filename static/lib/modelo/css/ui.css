@@ -9,7 +9,7 @@ a.title, .title a, a .title {
   text-decoration: none;
 }
 a.title:hover, .title a:hover, a .title:hover {
-  color: #0a58ca;
+  color: #212529;
   text-decoration: underline;
 }
 
@@ -257,7 +257,7 @@ a:hover > .img-thumbnail {
   font-size: 24px;
 }
 .menu-aside .menu-item.active .icon {
-  color: #0d6efd;
+  color: #343A40;
 }
 .menu-aside .menu-item.active .menu-link {
   background-color: #d7e7ff;
@@ -329,7 +329,7 @@ a:hover > .img-thumbnail {
   color: #212529;
 }
 .nav-icontop a.nav-link.active i, .nav-icontop a.nav-link.active .text {
-  color: #0d6efd;
+  color: #343A40;
 }
 
 .nav-ondark .active {
@@ -617,10 +617,10 @@ a:hover > .img-thumbnail {
 }
 .btn-light:hover {
   border-color: #c1c9d0;
-  color: #0d6efd;
+  color: #343A40;
 }
 .btn-light:hover i {
-  color: #0d6efd;
+  color: #343A40;
 }
 .btn-light.active {
   border-color: #c1c9d0;
@@ -628,7 +628,7 @@ a:hover > .img-thumbnail {
 }
 
 .btn-primary-light {
-  color: #0d6efd;
+  color: #343A40;
 }
 
 .btn i {
@@ -647,7 +647,7 @@ a[class*=card] {
   color: #51585e;
 }
 a[class*=card]:hover .title {
-  color: #0d6efd;
+  color: #343A40;
 }
 
 /* if product as card element */
@@ -672,7 +672,7 @@ a[class*=card]:hover .title {
   text-decoration: none;
 }
 [class*=card-product] a.title:hover {
-  color: #0d6efd;
+  color: #343A40;
 }
 [class*=card-product] .price {
   color: #212529;
@@ -1020,7 +1020,7 @@ strong.price, b.price, .b.price, .fw-bold.price {
   list-style: none;
   margin: 0;
   padding: 0;
-  border-left: 2px solid #0d6efd;
+  border-left: 2px solid #343A40;
   margin-left: 12px;
   position: relative;
 }
@@ -1034,7 +1034,7 @@ strong.price, b.price, .b.price, .fw-bold.price {
   top: 3px;
   left: -8px;
   content: "";
-  background: #0d6efd;
+  background: #343A40;
   width: 14px;
   height: 14px;
   border-radius: 100%;
@@ -1044,7 +1044,7 @@ strong.price, b.price, .b.price, .fw-bold.price {
 /* =====  BREADCRUMB STEP   ===== */
 .breadcrumb.steps {
   margin-bottom: 0;
-  color: #0d6efd;
+  color: #343A40;
 }
 .breadcrumb.steps a {
   color: inherit;
@@ -1168,7 +1168,7 @@ strong.price, b.price, .b.price, .fw-bold.price {
   opacity: 0;
 }
 .checkbox-btn input:checked ~ .btn {
-  border-color: #0d6efd;
+  border-color: #343A40;
   background-color: #e9ecef;
 }
 
@@ -1191,7 +1191,7 @@ strong.price, b.price, .b.price, .fw-bold.price {
   mix-blend-mode: darken;
 }
 .box-check input:checked ~ .border-oncheck {
-  border-color: #0d6efd;
+  border-color: #343A40;
   background-color: rgba(231, 241, 255, 0.5);
 }
 
@@ -1212,7 +1212,7 @@ strong.price, b.price, .b.price, .fw-bold.price {
   background-color: #f8f9fa;
 }
 .gallery-uploader-wrap .uploader-img:hover {
-  border-color: #0d6efd;
+  border-color: #343A40;
   background-color: rgba(231, 241, 255, 0.5);
 }
 .gallery-uploader-wrap input {
@@ -1242,7 +1242,7 @@ a.itemside {
   text-decoration: none;
 }
 a.itemside:hover .title {
-  color: #0d6efd;
+  color: #343A40;
 }
 a.itemside:hover .img-thumbnail {
   border-color: #9DA1A7;
@@ -1274,7 +1274,7 @@ a.itemside:hover .img-thumbnail {
   color: inherit;
 }
 .itemside a.title:hover {
-  color: #0d6efd;
+  color: #343A40;
 }
 .itemside p {
   margin-bottom: 0;
@@ -1393,7 +1393,7 @@ ul.row {
   text-decoration: none;
 }
 .list-menu li > a:hover {
-  color: #0d6efd;
+  color: #343A40;
   text-decoration: underline;
 }
 

@@ -19,6 +19,7 @@
 
 	<!-- Font awesome 5 -->
 	<link href="{% static 'lib/modelo/fonts/fontawesome/css/all.min.css' %}" type="text/css" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/41ccacd8d2.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -45,6 +46,11 @@
 
 	<!-- Bootstrap js -->
 	<script src="{% static 'lib/modelo/js/bootstrap.bundle.min.js' %}"></script>
+
+
+	{% block js %} 
+
+	{% endblock %}
 
 	<!-- Custom js -->
 	<script src="{% static 'lib/modelo/js/script.js' %}"></script>
