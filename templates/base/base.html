@@ -43,17 +43,16 @@
 	{% include 'base/marcas.html' %}
 
 	{% include 'base/footer.html' %}
+	<span id="valorUF">0,00</span>
 
 	<!-- Bootstrap js -->
 	<script src="{% static 'lib/modelo/js/bootstrap.bundle.min.js' %}"></script>
-
-
-	{% block js %} 
-
-	{% endblock %}
-
 	<!-- Custom js -->
 	<script src="{% static 'lib/modelo/js/script.js' %}"></script>
+	<script src="{% static 'lib/jquery/jquery.min.js' %}"></script>
+	<script src="{% static 'lib/jqueryui/jquery-ui.min.js' %}"></script>
+	<script src="{% static 'assets/js/xml2json.js' %}"></script>
+	{% block js %}{% endblock %}
 
 </body>
 

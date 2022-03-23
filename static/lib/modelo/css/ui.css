@@ -677,6 +677,10 @@ a[class*=card]:hover .title {
 [class*=card-product] .price {
   color: #212529;
 }
+[class*=card-product] .price-install {
+  color: #000000;
+  font-size: 70%;
+} 
 [class*=card-product] .price-old {
   color: #9DA1A7;
   margin-left: 3px;

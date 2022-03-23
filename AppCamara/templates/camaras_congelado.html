@@ -6,23 +6,25 @@
 <section class="padding-top">
   <div class="container">
     <div class="row">
-      {% for camara in camaras %}
+      {% for camara in json %}
       <div class="col-lg-3 col-md-6 col-sm-6">
         <figure class="card card-product-grid">
           <a href="#" class="img-wrap">
+            <span class="topbar"> <b class="badge bg-success"> Nuevo </b> </span>
             <img src="{% static 'imagenes/camara.png' %}">
           </a>
           <figcaption class="info-wrap border-top">
             <a href="{% url 'camara:camara-detalle' camara.id %}" class="title text-truncate">{{camara.nombre}}</a>
-            <small class="text-muted">Dimensión: {{camara.dimension}}</small>
+            <small class="text-muted">{{camara.tipo}}</small>
             <br>
-            <del class="price-old">$ {{camara.precioAntes|floatformat:0|intcomma}}</del>
+            <small class="text-muted">Dimensiones {{camara.dimension}} mt.</small>
             <div class="price-wrap">
-              <span class="price">Precio: $ {{camara.precioCamara|floatformat:0|intcomma}} + IVA</span>
+              <span class="price"><b> ${{camara.precio|floatformat:0|intcomma}} + IVA</b></span> 
+              <!-- <del class="price-old">${{camara.precio_old|floatformat:0|intcomma}}</del> -->
             </div> <!-- price-wrap.// -->
             <div class="price-wrap">
-              <span class="price">Con Intalación: $ {{camara.precioIntalacion|floatformat:0|intcomma}} + IVA</span>
-            </div> <!-- price-wrap.// -->
+              <span class="price-install">Con Intalación: ${{camara.precio_intalacion|floatformat:0|intcomma}} + IVA</span>
+            </div>
           </figcaption>
         </figure>
       </div> <!-- col end.// -->

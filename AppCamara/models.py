@@ -1,20 +1,12 @@
 from email.policy import default
 from django.db import models
+from AppInicio.libreria import valorUf
 import requests
 import json
 from datetime import datetime
 import pandas as pd
 
 # Create your models here.
-
-def valorUf():
-    _dia = datetime.today().date().strftime('%d-%m-%Y')
-    url = f'https://mindicador.cl/api/uf/{_dia}'
-    response = requests.get(url)
-    data = json.loads(response.text.encode("utf-8"))
-    for e in data["serie"]:
-        _valor_uf = e["valor"]
-    return _valor_uf
 
 class TipoCamara(models.Model):
     codigo = models.CharField(
@@ -77,6 +69,7 @@ class Camara(models.Model):
     imagen = models.ManyToManyField(
         ImagenCamara, blank=True, default=None, verbose_name="Imagen de Camara"
     )
+    oferta = models.BooleanField(default=False, verbose_name="Oferta")
     # Datos de Creación
     registroActivo = models.BooleanField(default=True, verbose_name="Registro Activo")
     registroFechaCreacion = models.DateTimeField(
@@ -89,19 +82,5 @@ class Camara(models.Model):
     class Meta:
         verbose_name = "Camara"
         verbose_name_plural = "Camara"
-
-    def precioCamara(self):
-        _total = self.valorUF * valorUf()
-        return _total
-
-    def precioAntes(self):
-        _total = self.valorUF * valorUf()
-        _precioAnterio = _total + _total * 0.1
-        return _precioAnterio
-
-    def precioIntalacion(self):
-        _total = self.valorUF * valorUf()
-        _precioIntalacion = _total + _total * 0.07
-        return _precioIntalacion
 
 

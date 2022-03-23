@@ -24,7 +24,7 @@ urlpatterns = [
         name="camaras-congelado",
     ),
     path(
-        "camara-detalle/<int:id>/",
+        "camara-detalle/<int:id>",
         views.camaraDetalle,
         name="camara-detalle",
     ),
